@@ -1,0 +1,21 @@
+{
+  "name": "edesio_PoC",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": ">= 4.0.x",
+    "body-parser": "~1.0.0",
+    "method-override": "~1.0.0",
+    "serve-static": "~1.0.0",
+    "cookie-parser": "~1.0.0",
+    "cookie-session": "~1.0.0",
+    "mongoose": ">= 3.9.x", 
+    "socket.io": ">= 0.9.x", 
+    "passport": "*",
+    "jade": "*",
+    "underscore": "*",
+    "coffee-script": "*"
+  },
+  "engine": "node 0.10.x"
+}
+
