@@ -3,30 +3,16 @@ html(ng-app="myApp")
   head
     meta(charset='utf8')
     base(href='/')
-    title Angular + Socket.io Chat
+    title Edos.io Prototype
     link(rel='stylesheet', href='/css/bootstrap.min.css')
     link(rel='stylesheet', href='/css/bootstrap-responsive.min.css')
     link(rel='stylesheet', href='/css/app.css')
   body(ng-init="loadScopes()")
-    .navbar.navbar-inverse.navbar-fixed-top
-      .navbar-inner
-        .chatBar
-          button.btn.btn-navbar(type='button', data-toggle='collapse', data-target='.nav-collapse')
-            span.icon-bar
-            span.icon-bar
-            span.icon-bar
-          a.brand(href='./index.html') Edes.io
-          .nav-collapse.collapse
-            ul.nav
-              li.active
-                a(href='./index.html') Home
-            ul.nav.pull-right
-              li
-                a(data-toggle='modal', href='#changeNameModal') Change my name
     .row
-      .col-md-8
+      .span2
+      .span6
         span some content here !
-      .col-md-4
+      .span4
         block body
     script(src='//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js')
     script(src='js/lib/bootstrap.min.js')

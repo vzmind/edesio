@@ -7,6 +7,7 @@ var express = require('express')
   , server = http.createServer(app)
   , routes = require('./routes')
   , socket = require('./routes/socket.js')
+  , mongoose = require('mongoose');
   , io = require('socket.io').listen(server);
 
     app.use(bodyParser());
