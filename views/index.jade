@@ -16,19 +16,23 @@ block body
                 input(ng-model='message',class='span2 input-message', placeholder='Message')
                 input(type='submit', value='Send', class='btn btn-success', style='margin-left: 10px;margin-top: 0')
 
-  .TaskBox(ng-controller='AppCtrl')
-    .row
-      .span4
-        h3 Tasks
-        .well.task-spot
-        .Taskform
-          .navbar-inner
-            .TaskForm
-              form(ng-submit='createTask()',class='well form-search form-create-task')
-                input(ng-model='message',class='span2 input-message', placeholder='Text')
-                input(type='submit', value='Create', class='btn btn-success', style='margin-left: 10px;margin-top: 0')
-
-
+  .TaskBox(ng-controller='taskCtrl')
+    .jumbotron.text-center
+      h3 Todo-aholic
+      span.label.label-info 
+    #todo-list.row
+      .col-sm-4.col-sm-offset-4
+        .checkbox("ng-repeat"="todo in todos")
+          input("ng-click"="deleteTodo(todo._id)", type="checkbox") 
+          {{ todo.text }}
+            
+    #todo-form.row
+      .col-sm-8.col-sm-offset-2.text-center
+        form
+          .form-group
+            input.form-control.input-lg.text-center("ng-model"="formData.text", placeholder="I want to buy a puppy that will love me forever", type="text")
+          button.btn.btn-primary.btn-lg("ng-click"="createTodo()", type="submit") Add
+  
 
     #changeNameModal.modal.hide.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
         .modal-body
