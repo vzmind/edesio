@@ -4,18 +4,15 @@ block body
   .chatBox(ng-controller='AppCtrl')
     .row
       .span4
-        h3 Messages
+        h3 Chat Room
         .well.message-spot
-          p(ng-repeat='message in messages',
-            ng-class='message.me',
-            class='') {{message.user}}: {{message.text}}
-        .messageBox
-          .navbar-inner
-            .chatForm
-              form(ng-submit='sendMessage()',class='well form-search form-send-message')
-                input(ng-model='message',class='span2 input-message', placeholder='Message')
-                input(type='submit', value='Send', class='btn btn-success', style='margin-left: 10px;margin-top: 0')
-                
+          p(ng-repeat='message in messages',ng-class='message.me', class='') {{message.user}}: {{message.text}}
+        #messageBox
+          form(ng-submit='sendMessage()')
+            .form-group
+              input.form-control.input-lg.text-center(ng-model='message', placeholder='Message', type='text')
+            button.btn.btn-success Send
+
     #changeNameModal.modal.hide.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
       .modal-body
         h3 Change your name
@@ -27,22 +24,23 @@ block body
 
 
   .TaskBox(ng-controller='taskCtrl')
-    .jumbotron.text-center
-      h3 Todo-aholic
-      span.label.label-info 
-    #todo-list.row
-      .col-sm-4.col-sm-offset-4
-        .checkbox("ng-repeat"="todo in todos")
-          input("ng-click"="deleteTodo(todo._id)", type="checkbox") 
-          {{ todo.text }}
-            
-    #todo-form.row
-      .col-sm-8.col-sm-offset-2.text-center
-        form
-          .form-group
-            input.form-control.input-lg.text-center("ng-model"="formData.text", placeholder="I want to buy a puppy that will love me forever", type="text")
-          button.btn.btn-primary.btn-lg("ng-click"="createTodo()", type="submit") Add
-  
+    .row
+      .span4
+        h3 Tasks
+        span.label.label-info 
+        #todo-list.row
+          .span3
+            .checkbox("ng-repeat"="todo in todos")
+              input("ng-click"="deleteTodo(todo._id)", type="checkbox") 
+              {{ todo.text }}
+                
+        #todo-form.row
+          .span4.text-center
+            form
+              .form-group
+                input.form-control.input-lg.text-center("ng-model"="formData.text", placeholder="Enter your next task here", type="text")
+              button.btn.btn-success("ng-click"="createTodo()", type="submit") Add
+      
 
    
 
